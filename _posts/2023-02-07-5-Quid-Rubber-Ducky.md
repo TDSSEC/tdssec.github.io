@@ -8,7 +8,7 @@ tags: [USB]
 math: true
 mermaid: true
 image:
-  path: /2023-02-07-5-Quid-Rubber-Ducky/attiny82-usb.png
+  path: /2023-02-07-5-Quid-Rubber-Ducky/attiny85-usb.png
   #lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: ATtiny85 board
 ---
@@ -26,14 +26,14 @@ The rubber ducky by [Hak5](https://shop.hak5.org/products/usb-rubber-ducky) is a
 ## Heads up about shorting this device.  
 Taken from [DigiStump.com](https://digistump.com/wiki/digispark/tutorials/connecting) directly:  
 
-*The Digispark, due to its small size and low cost is not as robust as a full blown Arduino.*
-
-*When testing a new circuit we recommend that you test it with an external power supply first. Connecting a shorted circuit to the Digispark and connecting it to your computer could damage your computer and/or its USB ports. We take no responsibility for damage to your machine as a result of the use of a Digispark.*
-
-*We strongly recommend connecting your Digispark through a USB hub which will often limit the damage caused by a short circuit to the usb hub. For the record, we've found many computers have usb fuses built in, and when we blew them on our 27“ Mac monitor, thankfully they reset and everything worked after a power down.*
-
+> *The Digispark, due to its small size and low cost is not as robust as a full blown Arduino.*  
+*When testing a new circuit we recommend that you test it with an external power supply first. Connecting a shorted circuit to the Digispark and connecting it to your computer could damage your computer and/or its USB ports. We take no responsibility for damage to your machine as a result of the use of a Digispark.*  
+*We strongly recommend connecting your Digispark through a USB hub which will often limit the damage caused by a short circuit to the usb hub. For the record, we've found many computers have usb fuses built in, and when we blew them on our 27“ Mac monitor, thankfully they reset and everything worked after a power down.*  
 *The Digispark does not have short circuit or reverse polarity protection. Connecting power to the Digispark power pins backwards will almost certainly destroy it.*
+{: .prompt-danger }
 
+I have been using a simple USB to USB cable:  
+![USB to USB](/2023-02-07-5-Quid-Rubber-Ducky/usb-to-usb.jpeg){: width="500" height="102"}
 ## Drivers installation
 Install the appropriate drivers for your Operating System in use. Without these installed, you might find that unless your Attiny85 came with a USB bootloader pre-installed, your OS wont detect this device!
 
@@ -43,19 +43,23 @@ Install the appropriate drivers for your Operating System in use. Without these 
 Next, we need to download the boards for Digispark.  
 3. Open **_File>Preferences_** and add the below URL to the **_Additional Board Manager URL_** section.
 `http://digistump.com/package_digistump_index.json`
+![preferences](/2023-02-07-5-Quid-Rubber-Ducky/preferences.png){: width="1024"}
 4. Click OK...
 5. Select **_Tools>Boards>Board Manager_**.
 6. Search for **Digistump AVR Boards** and Install
+![DigiStump AVR board](/2023-02-07-5-Quid-Rubber-Ducky/dvr-board-manager.png){: width="1024"}
 
 ### Choosing the Digistump AVR Board  
 1. Open **_Tools>Boards>Digistump AVR Board_**.
-2. Select **Digispark (Default - 16.5mhz).
+2. Select **Digispark (Default - 16.5mhz).**
+![DigiSpark 16.5mhz](/2023-02-07-5-Quid-Rubber-Ducky/digispark-board-choice.png){: width="1024"}
 
 ## Upload Test Script to the board  
 With the drivers installed, as well as the Arduino setup, lets build and upload a built in keyboard test script.  
 **Do not plug the Arduino in until step 5**.
 1. Have the Digispark (Default - 16.5mhz) board selected within Arduino  
 2. Open **_File>Example>DigisparkKeyboard>Keyboard_**.
+![Keyboard Example](/2023-02-07-5-Quid-Rubber-Ducky/keyboard-example.png){: width="1024"}
 3. Top-left select **_Verify_** button to check the code is OK.
 4. Click the **_Upload_** button next to upload the code to the Arduino.
 5. **Now you can plug the Arduino in**.
