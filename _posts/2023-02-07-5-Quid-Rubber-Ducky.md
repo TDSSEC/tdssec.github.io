@@ -65,7 +65,7 @@ With the drivers installed, as well as the Arduino setup, lets build and upload 
 5. **Now you can plug the Arduino in**.
 
 ### Open a Text Editor  
-1. Every 5 seconds, the Arduino will write "Hello Digispark!" - Confirming this has worked!
+1. Every 5 seconds, the ATtiny85 will write "Hello Digispark!" - Confirming this has worked!
 
 ## Time to make this malicious!  
 ### Scripts  
