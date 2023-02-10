@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Welcome! I am a **Penetration Tester** that primarily focuses on **Network Security Assessments** and **Web Application Penetration Testing**.
+Welcome! I am a **Penetration Tester** that primarily focuses on **Network Security Assessments** and **Web Applications**.
 
 I started this blog as a place for me to store notes, CTF walkthroughs, and provide information that is hopefully useful to others too.
 

@@ -58,6 +58,12 @@
       </a>
     </li>
 
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="/assets/disclaimer.html" class="nav-link">DISCLAIMER
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+      <!--  <span>{{ site.data.locales[site.lang].tabs.AUTO_ENUM | upcase }}</span> -->
+      </a>
+    </li>
   </ul> <!-- ul.nav.flex-column -->
 
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">

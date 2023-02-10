@@ -23,7 +23,7 @@ The rubber ducky by [Hak5](https://shop.hak5.org/products/usb-rubber-ducky) is a
 - [Arduino IDE](https://www.arduino.cc/en/software)- Open-source IDE allowing you to write and upload code to the board.   
 - [Digistump Drivers](https://github.com/digistump/DigistumpArduino/releases) - It's needed..!
 
-## Heads up about shorting this device.  
+## Important Info/Disclaimer.
 Taken from [DigiStump.com](https://digistump.com/wiki/digispark/tutorials/connecting) directly:  
 
 > *The Digispark, due to its small size and low cost is not as robust as a full blown Arduino.*  
@@ -31,6 +31,8 @@ Taken from [DigiStump.com](https://digistump.com/wiki/digispark/tutorials/connec
 *We strongly recommend connecting your Digispark through a USB hub which will often limit the damage caused by a short circuit to the usb hub. For the record, we've found many computers have usb fuses built in, and when we blew them on our 27“ Mac monitor, thankfully they reset and everything worked after a power down.*  
 *The Digispark does not have short circuit or reverse polarity protection. Connecting power to the Digispark power pins backwards will almost certainly destroy it.*
 {: .prompt-danger }
+
+> The use of this device should only be performed with approval and prior written consent. ~ TDSSEC
 
 I have been using a simple USB to USB cable:  
 ![USB to USB](/2023-02-07-5-Quid-Rubber-Ducky/usb-to-usb.jpeg){: width="500" height="102"}
