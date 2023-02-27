@@ -1,5 +1,0 @@
----
-layout: encrypted
-
-encrypted: 971a695927c7ae878f046d8238fc2bcff22399214e18df12387b44e6cb4536d5U2FsdGVkX19tflqfPFCh7ig4oufXNPiyzt5AADh+phcMOJQqQWiF4x0HHSGK7U6buccWA+CMSek/cYPkMnAXAfoFmSXXehAXHwpGkiwjV217ymK3iPKdtIpA9PRRbGlLf8WDC7gmr+AFy/A/2ih1z7165a6SSlcFfoaXhxF7oaHvju3Qqz/iFo0AE1Ihdvfg
----
