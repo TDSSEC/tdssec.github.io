@@ -20,6 +20,6 @@ I started this blog as a place for me to store notes, CTF walkthroughs, and prov
 
 [**OpenBugBounty Contributions**](https://www.openbugbounty.org/researchers/TDSSEC/)
 
-[**HackTheBox Profile**](https://app.hackthebox.com/profile/477)
+[**HackTheBox Profile**](https://www.hackthebox.com/home/users/profile/49162)
 
 [**LinkedIn**](https://www.linkedin.com/in/thomas-squire-7567a8128/)
