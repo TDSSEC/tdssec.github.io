@@ -18,6 +18,8 @@ I started this blog as a place for me to store notes, CTF walkthroughs, and prov
 - Offensive Security Certified Professional OSCP  
 - CREST Registered Penetration Tester  
 
-**OpenBugBounty**  
+[**OpenBugBounty Contributions**](https://www.openbugbounty.org/researchers/TDSSEC/)
 
-https://www.openbugbounty.org/researchers/TDSSEC/
+[**HackTheBox Profile**](https://app.hackthebox.com/profile/477)
+
+[**LinkedIn**](https://www.linkedin.com/in/thomas-squire-7567a8128/)

